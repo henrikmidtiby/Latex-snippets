@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{rotating}
+
+\newcommand{\rot}[1]{\begin{turn}{90}#1\end{turn}}
+
+\begin{document}
+
+\begin{tabular}{r|l}
+h & a \\
+\hline
+s & 
+\begin{turn}{90}
+Hej
+\end{turn}
+\end{tabular}
+
+\vspace{2cm}
+
+\begin{tabular}{c|c|c|c}
+\hline
+\multicolumn{2}{c}{Hej} & \multicolumn{2}{|c}{Hej} \\
+\hline
+\rot{Linie 1} & 
+\rot{Linie 2} & 
+\rot{Linie 3} & 
+\rot{Linie 4\phantom{g}}  \\
+\hline
+1 & 2 & 3 & 4
+\end{tabular}
+
+
+\end{document}

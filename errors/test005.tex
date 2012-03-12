@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+
+Ifølge pythagoras er sidelængden af en retvinklet trekants hypotenuse $c$ givet ud fra 
+kateterne ($a$ og $b$). Nogle heltallige eksempler er givet i tabel \ref{tabPythagoras}.
+De er genereret ud fra de to hele tal $n$ og $m$ ud fra nedenstående formel.
+
+\begin{align}
+(a, b, c) = (m^2 – n^2, 2 \cdot m \cdot n, m^2 + n^2) 
+\end{align}
+
+
+\begin{table}
+\centering
+\begin{tabular}{lr|rrr}
+$n$ & $m$ & $a$ & $b$ & $c$ \\
+\hline
+1 & 2 	& 3 		& 4 		& 5	\\
+1 & 3 	& 8 		& 6 		& 10	\\
+2 & 3 	& 5 		& 12 	& 13	\\
+1 & 4 	& 15 	& 8 		& 17	\\
+2 & 4 	& 12 	& 16 	& 20	\\
+3 & 4 	& 7 		& 24 	& 25	\\
+\end{tabular}
+\caption{Pythagorære tripler}
+\label{tabPythagoras}
+\end{table}
+
+
+
+\end{document}

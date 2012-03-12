@@ -1,0 +1,30 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,textcomp}
+\usepackage[frenchb]{babel}
+\usepackage{listings}
+
+\begin{document}
+   \begin{enumerate}
+   \item Par exemple :
+      \begin{center}
+      \begin{tabular}{@{}lp{5cm}l}
+      \hline
+      Méthode & Description & Exemple d'utilisation\\
+      \hline
+      \texttt{isLetter()}& Indique si le caractère est une lettre de l'alphabet. &
+      \begin{lstlisting}[numbersep=0pt]
+QChar MyChar('x');
+bool IsLetter = MyChar.isLetter();
+// IsLetter vaut vrai
+QChar MyChar2('&');
+IsLetter = MyChar2.isLetter();
+// IsLetter vaut faux
+      \end{lstlisting}\\
+      \hline
+      \texttt{toUpper()}& Retourne le même caractère mais en majuscules. & toto \\
+      \end{tabular}
+      \end{center}
+   \end{enumerate}
+\end{document}

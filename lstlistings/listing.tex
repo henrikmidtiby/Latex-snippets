@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{listings}
+\lstset{ %
+language=R}
+
+\begin{document}
+
+
+\section{R code for median filtering and peak fitting}
+\lstinputlisting{medianfilterfitting.r}
+
+\section{Result of running the R code}
+\begin{lstlisting}
+> source('medianfilterfitting.r')
+Loading required package: MASS
+
+Attaching package: 'signal'
+
+The following object(s) are masked from 'package:stats':
+
+    filter, poly
+
+
+Formula: signal ~ bg + a * scatterangle + h1 * exp(-((scatterangle - m1)/s1)^2) + 
+    h2 * exp(-((scatterangle - m2)/s2)^2) + h3 * exp(-((scatterangle - 
+    m3)/s3)^2) + h4 * exp(-((scatterangle - m4)/s4)^2) + h5 * 
+    exp(-((scatterangle - m5)/s5)^2) + h6 * exp(-((scatterangle - 
+    m6)/s6)^2) + h7 * exp(-((scatterangle - m7)/s7)^2)
+
+Parameters:
+     Estimate Std. Error t value Pr(>|t|)    
+h1 25.5793638  0.4161380   61.47   <2e-16 ***
+m1 22.2704241  0.0039837 5590.44   <2e-16 ***
+s1  0.3004617  0.0056652   53.04   <2e-16 ***
+h2 72.5605224  0.4915620  147.61   <2e-16 ***
+m2 11.0718189  0.0011890 9311.55   <2e-16 ***
+s2  0.2153972  0.0016917  127.33   <2e-16 ***
+h3  7.1634488  0.2863637   25.02   <2e-16 ***
+m3 34.4565920  0.0206871 1665.61   <2e-16 ***
+s3  0.6354294  0.0294732   21.56   <2e-16 ***
+h4  5.9966792  0.2099885   28.56   <2e-16 ***
+m4 38.5020818  0.0337586 1140.51   <2e-16 ***
+s4  1.1857543  0.0483296   24.54   <2e-16 ***
+h5  3.0768817  0.1776630   17.32   <2e-16 ***
+m5 45.5787349  0.0778363  585.57   <2e-16 ***
+s5  1.6593157  0.1117539   14.85   <2e-16 ***
+h6 11.8463350  0.4721705   25.09   <2e-16 ***
+m6 60.2836352  0.0075732 7960.11   <2e-16 ***
+s6  0.2329023  0.0107369   21.69   <2e-16 ***
+h7 10.8233992  0.4833622   22.39   <2e-16 ***
+m7 61.4582108  0.0080970 7590.29   <2e-16 ***
+s7  0.2222367  0.0114791   19.36   <2e-16 ***
+bg  4.3389982  0.0530647   81.77   <2e-16 ***
+a  -0.0351225  0.0009489  -37.02   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.472 on 4228 degrees of freedom
+
+Number of iterations to convergence: 19 
+Achieved convergence tolerance: 7.761e-06 
+
+
+\end{lstlisting}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[nosolutionfiles]{answers}
+\Newassociation{sol}{Solution}{ans}
+\Newassociation{hint}{Hints}{hnt}
+\newtheorem{ex}{Exercise}
+\begin{document}
+\Opensolutionfile{ans}[ans]
+\Opensolutionfile{hnt}[hints]
+\section{Problems}
+\begin{ex}
+First exercise
+\begin{sol}
+First solution.
+\end{sol}
+\end{ex}
+\begin{ex}
+Second exercise
+\begin{hint}
+Hint to second question.
+\end{hint}
+\begin{sol}
+Second solution.
+\end{sol}
+\end{ex}
+\Closesolutionfile{hnt}
+\Closesolutionfile{ans}
+\section{Solutions}
+\input{ans}
+
+\section{Hints}
+\input{hints}
+
+\end{document}

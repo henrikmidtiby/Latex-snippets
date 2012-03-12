@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+\newcounter{includepdfpage}
+\newcounter{currentpagecounter}
+\newcommand{\addlabelstoallincludedpages}[1]{
+	\refstepcounter{includepdfpage}\stepcounter{currentpagecounter}\label{#1.\thecurrentpagecounter}}
+\newcommand{\modifiedincludepdf}[3]{
+	\setcounter{currentpagecounter}{0}
+	\includepdf[pages=#1,pagecommand=\addlabelstoallincludedpages{#2}]{#3}}
+
+\begin{document}
+
+See page \pageref{one.1} till \pageref{two.3}.
+
+\modifiedincludepdf{-}{one}{test.pdf}
+\modifiedincludepdf{-}{two}{test.pdf}
+
+\end{document}

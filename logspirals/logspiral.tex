@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+\newcommand{\logspiral}[1]
+{
+\begin{tikzpicture}
+\pgfmathsetmacro{\tt}{#1}
+\draw[fill=white, color=white] (0, 0) circle (2);
+\foreach \offset in {0, 3.14/2, 3.14, 3.14/2*3}
+{
+    \draw [domain=0:ln(2/0.2)/\tt,variable=\t,smooth,samples=ln(4/0.2)*10]
+        plot ({(\t + \offset) r}: {0.2*exp(\tt*\t)});
+}
+\end{tikzpicture}
+}
+
+\noindent
+\logspiral{-1.0}
+\logspiral{0.9}
+\logspiral{-0.8}
+\logspiral{0.7}
+\logspiral{-0.6}
+\logspiral{0.5}
+\logspiral{-0.4}
+\logspiral{0.3}
+\logspiral{-0.2}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\makeatletter
+
+\newcounter{error}
+\def\newerror#1#2{\refstepcounter{error}%
+   \expandafter\xdef\csname errno@#1\endcsname{\arabic{error}}%
+   \expandafter\xdef\csname errds@#1\endcsname{#2}%
+}
+\def\errorcode#1{\expandafter\printerrinfo \csname errno@#1\endcsname}
+\def\errordesc#1{\expandafter\printerrinfo \csname errds@#1\endcsname}
+\def\printerrinfo#1{\ifx#1\relax\errmessage{Error code is invalid}%
+        \else\expandafter#1\fi}
+
+\makeatother
+
+
+\begin{document}
+
+\newerror{ArgumentError}{Too many arguments} 
+\newerror{DatabaseError}{Could not connect to database} 
+
+
+\errorcode{DatabaseError}---\errordesc{DatabaseError}
+
+\errorcode{ArgumentError}---\errordesc{ArgumentError} 
+
+\errorcode{DatabaseError}---\errordesc{DatabaseError}
+
+
+\end{document}

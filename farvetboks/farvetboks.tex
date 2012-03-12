@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{caption}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{hypcap}
+\usepackage{tikz}
+
+%\newcommand{\farvetboks}[3][]
+%{
+%\begin{figure}[#1]
+%\begin{tikzpicture}
+%\draw (0, 0) node[fill=#2] {
+%\begin{minipage}{\textwidth - 2em}
+%#3
+%\end{minipage}};
+%\end{tikzpicture}
+%\end{figure}
+%}
+
+
+
+
+
+\newcommand{\farvetboks}[3]{
+%\capstartfalse
+\begin{figure}[#1]%
+\begin{tikz}
+\draw node[text width=\textwidth - 2ex, rounded corners, fill=#2,
+inner sep=1ex, text justified] {
+\begin{minipage}{\textwidth - 0ex}
+#3
+\end{minipage}
+};
+\end{tikz}
+\end{figure}
+%\capstarttrue
+}
+
+\newcommand{\addspace}{\vspace{0.2cm} \\}
+
+\newcounter{opgave}
+\setcounter{opgave}{1}
+\newcommand{\opgavenr}{\theopgave\stepcounter{opgave}}
+
+
+\begin{document}
+
+\opgavenr
+\opgavenr
+\opgavenr
+\opgavenr
+
+
+\section{\color{red} Hej}
+
+\farvetboks{h}{red!20}{Hej 
+asfd lasdl hjasdfka ldkjha lasdlk jlkasjf adsafdsajfa skdfasl dfadlkjfsadjk hfaldskasdfas dlkjal kj\\ adfsafdsaasfd lasdl hjasdfka ldkjha lasdlk jlkasjf adsafdsajfa skdfasl dfadlkjfsadjk hfaldskasdfas dlkjal kj\\ adfsafdsa
+asfd lasdl hjasdfka ldkjha lasdlk jlkasjf adsafdsajfa skdfasl dfadlkjfsadjk hfaldskasdfas dlkjal kj adfsafdsa
+asfd lasdl hjasdfka ldkjha lasdlk jlkasjf adsafdsajfa skdfasl dfadlkjfsadjk hfaldskasdfas dlkjal kj\\ adfsafdsa
+}
+
+
+\farvetboks{h!}{red!30}{\textbf{Definitioner:}\\ 
+\textit{Agonist:} Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. \vspace{0.2cm} \\
+\textit{Agonist:} Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. \vspace{0.2cm} \\
+\textit{Antagonist:} Stoffer, der hæmmer aktiveringen af en receptor ved binding.}
+
+
+\farvetboks{h!}{red!30}{\textbf{Definitioner:}\\ 
+\textit{Agonist:} Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. \addspace
+\textit{Agonist:} Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. Stof, der binder til en receptor og aktiverer receptoren. \addspace
+\textit{Antagonist:} Stoffer, der hæmmer aktiveringen af en receptor ved binding.}
+
+\end{document}
